@@ -7,8 +7,8 @@
 #   username.github.io  → url: "https://你的帳號.github.io"   baseurl: ""
 #   一般 Repository     → url: "https://你的帳號.github.io"   baseurl: "/repository-名稱"
 # 本機預覽時可以兩個都留空。
-url: ""
-baseurl: ""
+url: "https://Yusheng1024.github.io"
+baseurl: "/michelle-site"
 
 markdown: kramdown
 
