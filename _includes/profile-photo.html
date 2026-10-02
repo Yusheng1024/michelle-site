@@ -1,0 +1,9 @@
+{% assign s = site.data.site %}
+{% assign photo = site.static_files | where: "path", s.profile_image | first %}
+<figure class="profile-photo">
+  {% if photo %}
+    <img src="{{ s.profile_image | relative_url }}" alt="{{ s.profile_alt | escape }}" width="480" height="600" loading="lazy">
+  {% else %}
+    <div class="profile-photo-empty">[個人照片]</div>
+  {% endif %}
+</figure>

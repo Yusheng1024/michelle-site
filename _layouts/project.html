@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="wrap page">
+  <p class="back-link"><a href="{{ '/projects/' | relative_url }}">回到專題與研究</a></p>
+  <header class="page-head">
+    <h1>{{ page.title }}</h1>
+    <p class="project-status">狀態：{{ page.status }}</p>
+    {% if page.summary %}<p class="lead">{{ page.summary }}</p>{% endif %}
+    {% if page.tools and page.tools.size > 0 %}
+      <ul class="tags" aria-label="使用工具">
+        {% for t in page.tools %}<li>{{ t }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+</article>

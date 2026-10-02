@@ -1,0 +1,33 @@
+# ============================================================
+# 個人與網站基本資料：全站唯一的來源
+# 改這裡，所有頁面都會一起更新。
+# 沒有填的欄位（留空 ""）就不會顯示。
+# ============================================================
+
+name: Michelle
+site_title: Michelle 的個人空間      # 瀏覽器分頁標題與導覽列左上角文字
+
+university: 慈濟大學
+university_en: Tzu Chi University
+department: 醫學影像暨放射科學系
+department_en: Department of Medical Imaging and Radiological Sciences
+grade: 大二
+
+# 首頁的個人標語。目前沒有，留空就不會顯示。
+# 想加的時候，在引號內填入文字即可。
+tagline: ""
+
+# 首頁簡短自我介紹（一兩句話）
+intro_short: "[請在此輸入一句簡短的自我介紹]"
+
+# 網站描述（搜尋引擎與分享預覽使用）。留空會自動用學校科系組成。
+description: ""
+
+# 個人照片：把照片放到這個路徑即可（檔名要一樣）。檔案不存在時會顯示預留框。
+profile_image: /assets/images/profile/profile.jpg
+profile_alt: "[請填寫照片的替代文字，例如：Michelle 的個人照片]"
+
+# 社群分享預覽圖（選填，例如 /assets/images/og.png）
+og_image: ""
+
+favicon: /assets/images/favicon.svg

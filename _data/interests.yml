@@ -1,0 +1,34 @@
+# ============================================================
+# 興趣與探索
+# 以「標籤」呈現，不做技能條，也不標示熟練程度。
+# 新增標籤：在 items 加一行 "- name: 名稱"
+# 新增分類：複製一個 group（id 要唯一）
+# 首頁會顯示 id 為 academic 與 personal 的兩個分類。
+# ============================================================
+
+groups:
+  - id: academic
+    title: 學術與技術
+    intro: 目前有興趣、正在接觸的領域與工具。標籤只代表興趣，不代表熟練程度。
+    items:
+      - name: 醫學影像（Medical Imaging）
+      - name: 影像處理（Image Processing）
+      - name: 人工智慧（Artificial Intelligence, AI）
+      - name: 生醫工程（Biomedical Engineering）
+      - name: Python
+      - name: MATLAB
+
+  - id: directions
+    title: 專題方向
+    intro: 目前考慮或正在進行的專題方向。
+    items:
+      - name: MRI AI Image Enhancement
+      - name: CT Image Enhancement
+
+  - id: personal
+    title: 日常興趣
+    intro: "[請在此寫下想分享的興趣小故事]"
+    items:
+      - name: 電玩遊戲（Video Games）
+      - name: 音樂
+      - name: 羽球

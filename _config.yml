@@ -1,0 +1,38 @@
+# ============================================================
+# 網站設定（只有「網址」相關的設定放這裡）
+# 姓名、學校、網站名稱等個人資料請改 _data/site.yml
+# ============================================================
+
+# 部署位置：
+#   username.github.io  → url: "https://你的帳號.github.io"   baseurl: ""
+#   一般 Repository     → url: "https://你的帳號.github.io"   baseurl: "/repository-名稱"
+# 本機預覽時可以兩個都留空。
+url: ""
+baseurl: ""
+
+markdown: kramdown
+
+# 「專題」集合：在 _projects/ 新增 .md 檔就會自動產生專題頁
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  # 未來要加入學習筆記時，取消下面三行的註解，並建立 _notes/ 內的 .md 檔
+  # notes:
+  #   output: true
+  #   permalink: /notes/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _templates
+  - vendor
+  - node_modules

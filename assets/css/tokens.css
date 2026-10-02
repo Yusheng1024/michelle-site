@@ -1,0 +1,51 @@
+/* ============================================================
+   設計變數：顏色與字體都在這裡改，其他 CSS 不用動
+   ============================================================ */
+:root {
+  /* 色彩（Light：米色系） */
+  --bg: #F5EFE4;          /* 背景 */
+  --surface: #FBF8F2;     /* 區塊底色 */
+  --primary: #3D5A52;     /* 主色：灰綠（連結、強調） */
+  --secondary: #8A7A64;   /* 次色：駝褐（只用於裝飾，不用於文字） */
+  --text: #2E2A25;        /* 內文 */
+  --muted: #6B6358;       /* 次要文字 */
+  --accent: #A4522F;      /* 點綴色：陶土紅（少量使用） */
+  --border: #DDD3C1;      /* 邊線 */
+
+  /* 字體：系統字體，不需下載網頁字體，之後想換字體只改這兩行 */
+  --font-sans: "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", system-ui, -apple-system, sans-serif;
+  --font-serif: "Iowan Old Style", "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+
+  /* 字級 */
+  --text-sm: 0.9rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.4rem, 1.15rem + 1vw, 1.85rem);
+  --text-title: clamp(2rem, 1.5rem + 2vw, 2.75rem);
+  --text-hero: clamp(3rem, 2rem + 5vw, 5.5rem);
+
+  /* 間距與版面 */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --radius: 4px;
+  --wrap: 66rem;
+  --measure: 40rem;
+
+  /* 動畫 */
+  --speed: 0.18s;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+[data-theme="dark"] {
+  --bg: #1F1C18;
+  --surface: #2A2621;
+  --primary: #8FB3A8;
+  --secondary: #B8A88F;
+  --text: #EDE6D8;
+  --muted: #B3AA9A;
+  --accent: #D98B6A;
+  --border: #3D372F;
+}

@@ -1,0 +1,32 @@
+# ============================================================
+# 學習歷程
+# 學校、科系、年級來自 site.yml，這裡只管「其他內容」。
+# 每個區塊：title 標題；items 項目清單；placeholder 沒有項目時顯示的提示。
+# items 有內容時，placeholder 就不會顯示。
+#
+# 新增項目的格式：
+#   items:
+#     - title: 項目名稱
+#       note: 簡短說明（可省略）
+# ============================================================
+
+sections:
+  - title: 課程
+    placeholder: "[請在此加入想記錄的課程]"
+    items: []
+
+  - title: 學習經驗
+    placeholder: "[請在此加入學習經驗]"
+    items: []
+
+  - title: 感興趣的領域
+    placeholder: "[請在此補充感興趣的領域]"
+    items: []
+
+  - title: 研究方向
+    placeholder: "[請在此補充研究方向]"
+    items: []
+
+  - title: 其他重要學習經歷
+    placeholder: "[請在此加入其他學習經歷]"
+    items: []

@@ -1,0 +1,38 @@
+{% assign s = site.data.site %}
+{% capture auto_desc %}{{ s.university }}{{ s.department }}學生 {{ s.name }} 的個人網站，記錄學習、專題與興趣。{% endcapture %}
+{% assign desc = page.description | default: s.description %}
+{% if desc == blank %}{% assign desc = auto_desc | strip %}{% endif %}
+{% if page.title and page.url != '/' %}{% capture full_title %}{{ page.title }}｜{{ s.site_title }}{% endcapture %}{% else %}{% assign full_title = s.site_title %}{% endif %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ full_title }}</title>
+  <meta name="description" content="{{ desc | escape }}">
+  {% if site.url != blank %}<link rel="canonical" href="{{ page.url | absolute_url }}">{% endif %}
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="{{ s.site_title | escape }}">
+  <meta property="og:title" content="{{ full_title | escape }}">
+  <meta property="og:description" content="{{ desc | escape }}">
+  {% if site.url != blank %}<meta property="og:url" content="{{ page.url | absolute_url }}">{% endif %}
+  {% if s.og_image != blank %}<meta property="og:image" content="{{ s.og_image | absolute_url }}">{% endif %}
+
+  <link rel="icon" href="{{ s.favicon | relative_url }}" type="image/svg+xml">
+
+  <!-- 先決定主題再載入 CSS，避免深色模式使用者看到閃白 -->
+  <script>
+    (function () {
+      var root = document.documentElement, theme = null;
+      root.classList.add('js');
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      root.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <link rel="stylesheet" href="{{ '/assets/css/tokens.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}">
+</head>

@@ -1,0 +1,19 @@
+# 導覽列：順序就是顯示順序。刪掉一項就不會顯示。
+# 新增頁面後，在這裡加一行即可。
+- title: 首頁
+  url: /
+- title: 關於我
+  url: /about/
+- title: 學習歷程
+  url: /education/
+- title: 專題與研究
+  url: /projects/
+- title: 興趣與探索
+  url: /interests/
+- title: 我的歷程
+  url: /timeline/
+- title: 聯絡我
+  url: /contact/
+# 未來啟用學習筆記時再加入：
+# - title: 學習筆記
+#   url: /notes/

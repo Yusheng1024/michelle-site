@@ -1,0 +1,7 @@
+{%- comment -%} 用法：{% include tags.html group="academic" %}  顯示 interests.yml 中某個分類的標籤 {%- endcomment -%}
+{% assign g = site.data.interests.groups | where: "id", include.group | first %}
+{% if g %}
+<ul class="tags" aria-label="{{ g.title }}">
+  {% for item in g.items %}<li>{{ item.name }}</li>{% endfor %}
+</ul>
+{% endif %}

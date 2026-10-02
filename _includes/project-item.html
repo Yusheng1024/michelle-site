@@ -1,0 +1,10 @@
+{%- comment -%} 專題列表的一個項目。用法：{% include project-item.html project=p %} {%- endcomment -%}
+{% assign p = include.project %}
+<li class="project-item">
+  <h3><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+  <p class="project-status">狀態：{{ p.status }}</p>
+  {% if p.summary %}<p>{{ p.summary }}</p>{% endif %}
+  {% if p.tools and p.tools.size > 0 %}
+    <ul class="tags">{% for t in p.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+  {% endif %}
+</li>

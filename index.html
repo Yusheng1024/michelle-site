@@ -1,0 +1,49 @@
+---
+layout: default
+description: ""
+---
+{% assign s = site.data.site %}
+<section class="wrap hero" aria-labelledby="hero-title">
+  <div class="hero-text">
+    <p class="hero-hello">你好，我是</p>
+    <h1 id="hero-title">{{ s.name }}</h1>
+    <p class="hero-id">{{ s.university }}<br>{{ s.department }}　{{ s.grade }}</p>
+    {% unless s.tagline == blank %}<p class="hero-tagline">{{ s.tagline }}</p>{% endunless %}
+    <p class="hero-intro">{{ s.intro_short }}</p>
+    <p class="hero-links">
+      <a href="{{ '/about/' | relative_url }}">更認識我一點</a>
+      <a href="{{ '/projects/' | relative_url }}">看看專題與研究</a>
+    </p>
+  </div>
+  <div class="slices" aria-hidden="true">
+    {% for i in (1..13) %}<span style="--i: {{ i }}"></span>{% endfor %}
+  </div>
+</section>
+
+<section class="wrap section reveal" aria-labelledby="home-projects">
+  <h2 id="home-projects">專題與研究</h2>
+  {% assign ps = site.projects | sort: "order" %}
+  {% if ps.size > 0 %}
+    <ul class="project-list">
+      {% for p in ps limit: 3 %}{% include project-item.html project=p %}{% endfor %}
+    </ul>
+    <p class="more"><a href="{{ '/projects/' | relative_url }}">所有專題</a></p>
+  {% else %}
+    <p>[請在此加入第一個專題]</p>
+  {% endif %}
+</section>
+
+<section class="wrap section reveal" aria-label="學習與興趣">
+  <div class="split">
+    <div>
+      <h2>學習與研究</h2>
+      {% include tags.html group="academic" %}
+      <p class="more"><a href="{{ '/education/' | relative_url }}">學習歷程</a></p>
+    </div>
+    <div>
+      <h2>日常裡的我</h2>
+      {% include tags.html group="personal" %}
+      <p class="more"><a href="{{ '/interests/' | relative_url }}">興趣與探索</a></p>
+    </div>
+  </div>
+</section>
