@@ -2,48 +2,105 @@
 layout: default
 description: ""
 ---
+
+{%- comment -%}網站基本資料{%- endcomment -%}
 {% assign s = site.data.site %}
+
+
+{%- comment -%}首頁 Hero 區域{%- endcomment -%}
 <section class="wrap hero" aria-labelledby="hero-title">
   <div class="hero-text">
+
+    <!-- 問候語 -->
     <p class="hero-hello">你好，我是</p>
+
+    <!-- 姓名 -->
     <h1 id="hero-title">{{ s.name }}</h1>
-    <p class="hero-id">{{ s.university }}<br>{{ s.department }}　{{ s.grade }}</p>
-    {% unless s.tagline == blank %}<p class="hero-tagline">{{ s.tagline }}</p>{% endunless %}
+
+    <!-- 學校、系所、年級 -->
+    <p class="hero-id">
+      {{ s.university }}<br>{{ s.department }}　{{ s.grade }}
+    </p>
+
+    <!-- 個人標語 -->
+    {% unless s.tagline == blank %}
+      <p class="hero-tagline">{{ s.tagline }}</p>
+    {% endunless %}
+
+    <!-- 個人簡介 -->
     <p class="hero-intro">{{ s.intro_short }}</p>
+
+    <!-- 首頁導覽連結 -->
     <p class="hero-links">
       <a href="{{ '/about/' | relative_url }}">更認識我一點</a>
       <a href="{{ '/projects/' | relative_url }}">看看專題與研究</a>
     </p>
   </div>
+
+  <!-- Hero 裝飾圖形 -->
   <div class="slices" aria-hidden="true">
-    {% for i in (1..13) %}<span style="--i: {{ i }}"></span>{% endfor %}
+    {% for i in (1..13) %}
+      <span style="--i: {{ i }}"></span>
+    {% endfor %}
   </div>
 </section>
 
+
+{%- comment -%}專題與研究區域{%- endcomment -%}
 <section class="wrap section reveal" aria-labelledby="home-projects">
   <h2 id="home-projects">專題與研究</h2>
+
+  <!-- 取得並排序專題 -->
   {% assign ps = site.projects | sort: "order" %}
+
   {% if ps.size > 0 %}
+
+    <!-- 專題列表 -->
     <ul class="project-list">
-      {% for p in ps limit: 3 %}{% include project-item.html project=p %}{% endfor %}
+      {% for p in ps limit: 3 %}
+        {% include project-item.html project=p %}
+      {% endfor %}
     </ul>
-    <p class="more"><a href="{{ '/projects/' | relative_url }}">所有專題</a></p>
+
+    <!-- 所有專題連結 -->
+    <p class="more">
+      <a href="{{ '/projects/' | relative_url }}">所有專題</a>
+    </p>
+
   {% else %}
+
+    <!-- 尚無專題 -->
     <p>[請在此加入第一個專題]</p>
+
   {% endif %}
 </section>
 
+
+{%- comment -%}學習與興趣區域{%- endcomment -%}
 <section class="wrap section reveal" aria-label="學習與興趣">
   <div class="split">
+
+    <!-- 學習與研究 -->
     <div>
       <h2>學習與研究</h2>
       {% include tags.html group="academic" %}
-      <p class="more"><a href="{{ '/education/' | relative_url }}">學習歷程</a></p>
+
+      <!-- 學習歷程連結 -->
+      <p class="more">
+        <a href="{{ '/education/' | relative_url }}">學習歷程</a>
+      </p>
     </div>
+
+    <!-- 個人興趣 -->
     <div>
       <h2>日常裡的我</h2>
       {% include tags.html group="personal" %}
-      <p class="more"><a href="{{ '/interests/' | relative_url }}">興趣與探索</a></p>
+
+      <!-- 興趣頁面連結 -->
+      <p class="more">
+        <a href="{{ '/interests/' | relative_url }}">興趣與探索</a>
+      </p>
     </div>
+
   </div>
 </section>
