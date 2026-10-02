@@ -6,8 +6,7 @@ permalink: /education/
 {% assign s = site.data.site %}
 <div class="edu-current">
   <h2>{{ s.university }}</h2>
-  <p>{{ s.department }}<br><span class="muted">{{ s.university_en }}</p>
-  <p>{{ s.department_en }}</span></p>
+  <p>{{ s.department }}<br><span class="muted">{{ s.university_en }}<br>{{ s.department_en }}</span></p>
   <p>{{ s.grade }}</p>
 </div>
 
